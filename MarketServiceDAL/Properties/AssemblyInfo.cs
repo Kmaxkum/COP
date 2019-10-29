@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("ClassLibraryControlInput")]
+[assembly: AssemblyTitle("MarketServiceDAL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ClassLibraryControlInput")]
+[assembly: AssemblyProduct("MarketServiceDAL")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("e16e5eb1-0f30-4657-87d5-0cae955f1e94")]
+[assembly: Guid("d0055087-b771-4a2a-b434-15bf825d8fba")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E16E5EB1-0F30-4657-87D5-0CAE955F1E94}</ProjectGuid>
+    <ProjectGuid>{D357E540-48B5-495A-9425-BF9A8AC0A1D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibraryControlInput</RootNamespace>
-    <AssemblyName>ClassLibraryControlInput</AssemblyName>
+    <RootNamespace>ClassLibraryControlReport</RootNamespace>
+    <AssemblyName>ClassLibraryControlReport</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,10 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,24 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlTextBox.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="BadDimensions.cs" />
+    <Compile Include="ComponentWordReport.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlTextBox.Designer.cs">
-      <DependentUpon>ControlTextBox.cs</DependentUpon>
+    <Compile Include="ComponentWordReport.Designer.cs">
+      <DependentUpon>ComponentWordReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlTextBox.resx">
-      <DependentUpon>ControlTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryControlSelected\ClassLibraryControlSelected.csproj">
-      <Project>{FC9F1032-4D83-42F8-AC91-DD6485908B51}</Project>
-      <Name>ClassLibraryControlSelected</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

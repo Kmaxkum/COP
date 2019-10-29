@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E16E5EB1-0F30-4657-87D5-0CAE955F1E94}</ProjectGuid>
+    <ProjectGuid>{D0055087-B771-4A2A-B434-15BF825D8FBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibraryControlInput</RootNamespace>
-    <AssemblyName>ClassLibraryControlInput</AssemblyName>
+    <RootNamespace>MarketServiceDAL</RootNamespace>
+    <AssemblyName>MarketServiceDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,23 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlTextBox.Designer.cs">
-      <DependentUpon>ControlTextBox.cs</DependentUpon>
-    </Compile>
+    <Compile Include="BindingModels\CustomerBindingModel.cs" />
+    <Compile Include="Interfaces\ICustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlTextBox.resx">
-      <DependentUpon>ControlTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryControlSelected\ClassLibraryControlSelected.csproj">
-      <Project>{FC9F1032-4D83-42F8-AC91-DD6485908B51}</Project>
-      <Name>ClassLibraryControlSelected</Name>
+    <ProjectReference Include="..\MarketModel\MarketModel.csproj">
+      <Project>{8779177e-72c3-4e79-b1a3-764cf181bc70}</Project>
+      <Name>MarketModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

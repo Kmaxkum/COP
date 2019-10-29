@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E16E5EB1-0F30-4657-87D5-0CAE955F1E94}</ProjectGuid>
+    <ProjectGuid>{100DC1DA-1C86-44AB-9D64-8A5CEB1EE86B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibraryControlInput</RootNamespace>
-    <AssemblyName>ClassLibraryControlInput</AssemblyName>
+    <RootNamespace>ClassLibraryControlMyInput</RootNamespace>
+    <AssemblyName>ClassLibraryControlMyInput</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,24 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlTextBox.cs">
+    <Compile Include="ControlTextBoxTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlTextBox.Designer.cs">
-      <DependentUpon>ControlTextBox.cs</DependentUpon>
+    <Compile Include="ControlTextBoxTemplate.Designer.cs">
+      <DependentUpon>ControlTextBoxTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlTextBox.resx">
-      <DependentUpon>ControlTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="ControlTextBoxTemplate.resx">
+      <DependentUpon>ControlTextBoxTemplate.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryControlSelected\ClassLibraryControlSelected.csproj">
-      <Project>{FC9F1032-4D83-42F8-AC91-DD6485908B51}</Project>
-      <Name>ClassLibraryControlSelected</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

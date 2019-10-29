@@ -102,7 +102,13 @@ namespace ClassLibraryControlWordDiagram
             // создаём набор данных
             Series seriesFirst = new Series(diagramName);
             // заполняем данными
-            seriesFirst.Bind(data, nameFirstProjection, nameSecondProjection);
+            try
+            {
+                seriesFirst.Bind(data, nameFirstProjection, nameSecondProjection);
+            }
+            catch {
+
+            }
             return seriesFirst;
         }
     }

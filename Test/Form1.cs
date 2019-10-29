@@ -89,7 +89,7 @@ namespace Test
         private void buttonDiagram_Click(object sender, EventArgs e)
         {
             
-            controlWordDiagram1.CreateDiagram<TestData>(ControlWordDiagram.Diagrams.BarChart, TestData.GetTestDataFirst(), "Человеки", "firstName", "value", @"D:\diagram.docx");
+            controlWordDiagram1.CreateDiagram<TestData>(ControlWordDiagram.Diagrams.PieChart, TestData.GetTestDataFirst(), "Человеки", "firstName", "value", @"D:\diagram.docx");
         }
 
         class TestData
@@ -102,8 +102,8 @@ namespace Test
                 List<TestData> testDataFirst = new List<TestData>();
 
                 testDataFirst.Add(new TestData() { firstName = "Иван", value = "1" });
-                testDataFirst.Add(new TestData() { firstName = "Ярик", value = "10" });
-                testDataFirst.Add(new TestData() { firstName = "Иван", value = "5" });
+                testDataFirst.Add(new TestData() { firstName = "Ярик", value = "1" });
+                testDataFirst.Add(new TestData() { firstName = "Иван", value = "1" });
                 testDataFirst.Add(new TestData() { firstName = "Сань", value = "8" });
                 testDataFirst.Add(new TestData() { firstName = "Да", value = "5" });
 
