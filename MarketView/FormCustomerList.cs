@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MarketServiceDAL.Interfaces;
+using MarketServiceDAL.BindingModels;
+using MarketServiceDAL.ViewModel;
 using Unity;
+using ClassLibraryPluginsInterface;
 
 namespace MarketView
 {
@@ -16,10 +19,19 @@ namespace MarketView
     {
         [Dependency] public new IUnityContainer Container { get; set; }
         private readonly ICustomerService service;
+        private Manager manager;
 
         public FormCustomerList(ICustomerService service)
         {
             InitializeComponent();
+            manager = new Manager();
+            if (manager.Headers != null && manager.Headers.Length != 0)
+            {
+                foreach (var elem in manager.Headers)
+                {
+                    listViewPlugins.Items.Add(elem);
+                }
+            }
             this.service = service;
             LoadData();
         }
@@ -86,6 +98,49 @@ namespace MarketView
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void buttonState_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                if (manager == null) {
+                    return;
+                }
+                CustomerBindingModel customer = manager.Plg["PluginStatus"](service.GetElement(Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value)));
+                service.UpdElement(customer);
+                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LoadData();
+        }
+
+        private void buttonSum_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                if (manager == null)
+                {
+                    return;
+                }
+                CustomerBindingModel customer = manager.Plg["PluginSum"](service.GetElement(Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value)));
+                service.UpdElement(customer);
+                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LoadData();
+
+        }
+
+        private void buttonCheck_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                if (manager == null)
+                {
+                    return;
+                }
+                CustomerBindingModel customer = manager.Plg["PluginCheck"](service.GetElement(Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value)));
+            }
             LoadData();
         }
     }

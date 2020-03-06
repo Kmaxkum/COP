@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using Unity;
 using ClassLibraryControlWordDiagram;
 using ClassLibraryControlReport;
+using ClassLibrarySingleton;
+using ClassLibraryPluginsInterface;
 
 namespace MarketView
 {
@@ -110,9 +112,9 @@ namespace MarketView
                         else {
                             mp[elem.Sum] = 1;
                         }
-                    }
+                    } 
 
-                    controlWordDiagram1.CreateDiagram(ControlWordDiagram.Diagrams.BarChart, Data.GetData(mp), "Количество покупателей с суммами", "sum", "cnt", sfd.FileName);
+                    controlWordDiagram1.CreateDiagram(ControlWordDiagram.Diagrams.BarChart, SingletonData.getInstance(mp).Data, "Количество покупателей с суммами", "sum", "cnt", sfd.FileName);
                     MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -142,21 +144,21 @@ namespace MarketView
             }
         }
 
-        class Data
-        {
-            public int cnt { get; set; }
-            public int? sum { get; set; }
+        //class Data
+        //{
+        //    public int cnt { get; set; }
+        //    public int? sum { get; set; }
 
-            public static List<Data> GetData(Dictionary<int?, int> mp)
-            {
-                List<Data> data = new List<Data>();
+        //    public static List<Data> GetData(Dictionary<int?, int> mp)
+        //    {
+        //        List<Data> data = new List<Data>();
 
-                foreach (var pair in mp) {
-                    data.Add(new Data() { sum = pair.Key, cnt = pair.Value });
-                }
+        //        foreach (var pair in mp) {
+        //            data.Add(new Data() { sum = pair.Key, cnt = pair.Value });
+        //        }
 
-                return data;
-            }
-        }
+        //        return data;
+        //    }
+        //}
     }
 }

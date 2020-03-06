@@ -30,7 +30,7 @@ namespace ClassLibraryControlSelected
         /// <summary> 
         /// Текст выбранной записи 
         /// </summary> 
-        [Category("Спецификация"), Description("Текст выбранной записи")]
+        [Category("Спецификация"), Description("Текст выбранного элемента")]
         public string SelectedText
         {
             get { return comboBox.Text; }

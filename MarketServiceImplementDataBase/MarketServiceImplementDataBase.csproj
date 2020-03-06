@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\CustomerProxy.cs" />
     <Compile Include="Implementations\CustomerServiceDB.cs" />
     <Compile Include="MarketDbContext.cs" />
     <Compile Include="Migrations\201910282112398_FirstMigration.cs" />

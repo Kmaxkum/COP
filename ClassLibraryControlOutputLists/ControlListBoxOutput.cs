@@ -13,6 +13,24 @@ namespace ClassLibraryControlOutputLists
 {
     public partial class ControlListBoxOutput : UserControl
     {
+        /// <summary> 
+        /// Порядковый номер выбранного элемента 
+        /// </summary> 
+        [Category("Спецификация"), Description("Порядковый номер выбранного элемента")]
+        public int SelectedIndex
+        {
+            get { return listBox.SelectedIndex; }
+        }
+
+        /// <summary> 
+        /// Текст выбранной записи 
+        /// </summary> 
+        [Category("Спецификация"), Description("Текст выбранного элемента")]
+        public string SelectedText
+        {
+            get { return listBox.Text; }
+        }
+
         public string Pattern { get; set; }
         /// <summary> 
         /// Конструктор 
@@ -28,6 +46,7 @@ namespace ClassLibraryControlOutputLists
         /// <param name="type">тип-елемент</param> обоб
         public void LoadListBox(IEnumerable<object> list)
         {
+            listBox.Items.Clear();
             listBox.Items.AddRange(MakeStrings(list));
         }
 

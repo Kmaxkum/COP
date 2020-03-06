@@ -89,9 +89,22 @@ namespace MarketView
                         Sum = controlSumBox.Sum
                     });
                 }
-                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DialogResult = DialogResult.OK;
-                Close();
+                if (CustomerStatus.Активен == (CustomerStatus)Enum.Parse(typeof(CustomerStatus), controlComboBox.SelectedText, true))
+                {
+                    var form = Container.Resolve<FormSelectWorker>();
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
             }
             catch (Exception ex)
             {
@@ -104,5 +117,6 @@ namespace MarketView
             DialogResult = DialogResult.Cancel;
             Close();
         }
+
     }
 }

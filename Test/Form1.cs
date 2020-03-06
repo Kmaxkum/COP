@@ -29,8 +29,8 @@ namespace Test
         
         [Serializable]
         public class Person {
-            public string firstName { get; set; }
-            public string secondName { get; set; }
+            public string firstName;
+            public string secondName;
         }
 
         List<Person> person;
@@ -114,6 +114,11 @@ namespace Test
         private void buttonPDF_Click(object sender, EventArgs e)
         {
             controlPDFReporter1.CreatePDFReport("Человеки", "Имя Фамилия", "firstName secondName", person, @"D:\report.pdf");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            label3.Text = controlListBoxOutput1.SelectedText;
         }
     }
 }

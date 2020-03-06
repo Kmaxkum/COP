@@ -34,7 +34,6 @@
             // listBox
             // 
             this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox.Enabled = false;
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 16;
             this.listBox.Location = new System.Drawing.Point(0, 0);

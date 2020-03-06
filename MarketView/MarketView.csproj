@@ -48,6 +48,10 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,13 +87,25 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelectWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectWorker.Designer.cs">
+      <DependentUpon>FormSelectWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCustomerAdd.resx">
       <DependentUpon>FormCustomerAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomerList.resx">
+      <DependentUpon>FormCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectWorker.resx">
+      <DependentUpon>FormSelectWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,6 +131,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryChainOfResponsibilityWorker\ClassLibraryChainOfResponsibilityWorker.csproj">
+      <Project>{b98cbc43-3703-499b-9b9c-66aa80bbb226}</Project>
+      <Name>ClassLibraryChainOfResponsibilityWorker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibraryControlBackup\ClassLibraryControlBackup.csproj">
       <Project>{92fa51ee-9371-4efb-928e-d5fc8ba1ece8}</Project>
       <Name>ClassLibraryControlBackup</Name>
@@ -138,6 +158,14 @@
     <ProjectReference Include="..\ClassLibraryControlWordDiagram\ClassLibraryControlWordDiagram.csproj">
       <Project>{93ca6e2b-b8e8-4329-bbcd-bbd42c1bbdf4}</Project>
       <Name>ClassLibraryControlWordDiagram</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryPluginsInterface\ClassLibraryPluginsInterface.csproj">
+      <Project>{7542864d-6fcb-47bf-8830-f1347492c90f}</Project>
+      <Name>ClassLibraryPluginsInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrarySingleton\ClassLibrarySingleton.csproj">
+      <Project>{ce92b2aa-f994-4f99-bf83-493b7b7bdb0e}</Project>
+      <Name>ClassLibrarySingleton</Name>
     </ProjectReference>
     <ProjectReference Include="..\MarketModel\MarketModel.csproj">
       <Project>{8779177e-72c3-4e79-b1a3-764cf181bc70}</Project>

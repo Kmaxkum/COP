@@ -26,7 +26,7 @@ namespace MarketView
         {
             var currentContainer = new UnityContainer();
             currentContainer.RegisterType<DbContext, MarketDbContext>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<ICustomerService, CustomerServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ICustomerService, CustomerProxy>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

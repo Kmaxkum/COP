@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{359D7795-17CF-43B8-8B4E-585AD7290D5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plugins</RootNamespace>
+    <AssemblyName>Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatus.Designer.cs">
+      <DependentUpon>FormStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSum.Designer.cs">
+      <DependentUpon>FormSum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PluginCheck.cs" />
+    <Compile Include="PluginStatus.cs" />
+    <Compile Include="PluginSum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryControlInput\ClassLibraryControlInput.csproj">
+      <Project>{e16e5eb1-0f30-4657-87d5-0cae955f1e94}</Project>
+      <Name>ClassLibraryControlInput</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryControlReport\ClassLibraryControlReport.csproj">
+      <Project>{d357e540-48b5-495a-9425-bf9a8ac0a1d7}</Project>
+      <Name>ClassLibraryControlReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryControlSelected\ClassLibraryControlSelected.csproj">
+      <Project>{c16c111f-cef0-4319-bf1b-969dc3d94a8e}</Project>
+      <Name>ClassLibraryControlSelected</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibraryPluginsInterface\ClassLibraryPluginsInterface.csproj">
+      <Project>{7542864d-6fcb-47bf-8830-f1347492c90f}</Project>
+      <Name>ClassLibraryPluginsInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketModel\MarketModel.csproj">
+      <Project>{8779177e-72c3-4e79-b1a3-764cf181bc70}</Project>
+      <Name>MarketModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketServiceDAL\MarketServiceDAL.csproj">
+      <Project>{d0055087-b771-4a2a-b434-15bf825d8fba}</Project>
+      <Name>MarketServiceDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormStatus.resx">
+      <DependentUpon>FormStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSum.resx">
+      <DependentUpon>FormSum.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
